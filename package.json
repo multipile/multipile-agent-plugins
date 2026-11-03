@@ -7,8 +7,7 @@
     "build": "node scripts/build-catalog.mjs",
     "check": "node scripts/build-catalog.mjs --check",
     "lint": "node scripts/validate-plugin.mjs plugins/*",
-    "validate": "bash scripts/validate.sh",
-    "new": "node scripts/new-plugin.mjs"
+    "validate": "bash scripts/validate.sh"
   },
   "engines": {
     "node": ">=20"
