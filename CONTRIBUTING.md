@@ -2,16 +2,11 @@
 
 ## Add a plugin
 
-```bash
-npm run new -- my-plugin --description "What it does" --category Productivity
-```
-
-This copies `templates/plugin/` to `plugins/my-plugin/`, adds the entry to `marketplace.config.json`, and regenerates the catalogs. Then:
-
-1. Edit `plugins/my-plugin/plugin.json`. Keep `name` equal to the directory name.
-2. Replace the starter skill in `plugins/my-plugin/skills/`.
-3. Run `npm run validate`.
-4. Commit the plugin together with the regenerated files under `.claude-plugin/`, `.agents/`, and `plugins/my-plugin/.claude-plugin/`.
+1. Create `plugins/my-plugin/` with a `plugin.json`, copying the fields from an existing plugin's. Keep `name` equal to the directory name, start `version` at `0.1.0`, and set `"license": "MIT"`.
+2. Add at least one component, such as a skill at `plugins/my-plugin/skills/<skill>/SKILL.md`.
+3. Add `{ "dir": "my-plugin" }` to `plugins` in `marketplace.config.json`, with a `category` if the default doesn't fit.
+4. Run `npm run build`, then `npm run validate`.
+5. Commit the plugin together with the regenerated files under `.claude-plugin/`, `.agents/`, and `plugins/my-plugin/.claude-plugin/`.
 
 ## Rules the build enforces
 
@@ -29,7 +24,7 @@ This copies `templates/plugin/` to `plugins/my-plugin/`, adds the entry to `mark
 
 The build cannot check what a value means, so one rule is yours to keep: MCP `headers` never carry secrets.
 
-The repository is MIT licensed and the template sets `"license": "MIT"`. A plugin that drops the field gets a warning, not an error.
+The repository is MIT licensed, so a plugin sets `"license": "MIT"`. A plugin that drops the field gets a warning, not an error.
 
 ## What is portable and what is host-specific
 

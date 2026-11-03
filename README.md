@@ -12,12 +12,10 @@ A single repository that publishes the same plugins to **Claude Code** and **Cod
 │       └── skills/multipile/        the skill, loaded by both hosts
 ├── .claude-plugin/marketplace.json  generated, read by Claude Code
 ├── .agents/plugins/marketplace.json generated, read by Codex
-├── templates/plugin/                scaffold used by `npm run new`
 ├── schemas/agent-plugins/1.0.0/     Agent Plugins JSON Schemas, for reference
 ├── scripts/
 │   ├── validate-plugin.mjs          checks a plugin against the plugin and skill rules
 │   ├── build-catalog.mjs            validates every plugin, then generates the outputs above
-│   ├── new-plugin.mjs               scaffolds a plugin and registers it
 │   └── validate.sh                  runs both hosts' validators
 └── .github/workflows/validate.yml   CI
 ```
@@ -52,7 +50,6 @@ Then open any repository that has a `.pile/` directory. The `multipile` skill lo
 
 | Task | Command |
 | :- | :- |
-| Scaffold a plugin | `npm run new -- <name> --description "..."` |
 | Check every plugin against the rules in CONTRIBUTING.md | `npm run lint` |
 | Regenerate catalogs after editing any `plugin.json` or the config | `npm run build` |
 | Check that generated files are current | `npm run check` |
