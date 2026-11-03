@@ -1,0 +1,22 @@
+# GitHub Actions. Runs on every push and pull request.
+# Checks that the generated catalogs are current, then validates the marketplace
+# with the real Claude Code and Codex CLIs.
+name: validate
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Claude Code and Codex CLIs
+        run: npm install -g @anthropic-ai/claude-code @openai/codex
+      - name: Validate marketplace
+        run: npm run validate
+        env:
+          REQUIRE_CLIS: "1"

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "gitrepo",
+  "version": "0.1.0",
+  "description": "Work in a git repository that declares piles: subtrees with a .pile/ directory whose intent.md says why each is one thing. Read a repository pile by pile, scope and commit a change, refine a layout, and write .pile/ declarations.",
+  "author": {
+    "name": "Multipile",
+    "url": "https://github.com/multipile"
+  },
+  "repository": "https://github.com/multipile/multipile-agent-plugins",
+  "license": "MIT",
+  "keywords": [
+    "git",
+    "piles",
+    "multipile",
+    "repository",
+    "intent"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Git Repo Piles",
+        "shortDescription": "Read and change a git repository pile by pile.",
+        "developerName": "Multipile",
+        "category": "Productivity"
+      }
+    }
+  }
+}
