@@ -1,0 +1,20 @@
+{
+  "name": "multipile",
+  "interface": {
+    "displayName": "Multipile"
+  },
+  "plugins": [
+    {
+      "name": "gitrepo",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gitrepo"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

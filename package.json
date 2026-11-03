@@ -1,0 +1,17 @@
+{
+  "name": "multipile-marketplace",
+  "private": true,
+  "type": "module",
+  "description": "Plugin marketplace for Claude Code and Codex",
+  "scripts": {
+    "build": "node scripts/build-catalog.mjs",
+    "check": "node scripts/build-catalog.mjs --check",
+    "lint": "node scripts/validate-plugin.mjs plugins/*",
+    "validate": "bash scripts/validate.sh",
+    "new": "node scripts/new-plugin.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

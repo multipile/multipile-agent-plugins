@@ -1,0 +1,35 @@
+{
+  "name": "multipile",
+  "description": "Multipile plugins for Claude Code and Codex.",
+  "owner": {
+    "name": "Multipile",
+    "url": "https://github.com/multipile"
+  },
+  "plugins": [
+    {
+      "name": "gitrepo",
+      "source": "./plugins/gitrepo",
+      "displayName": "Git Repo Piles",
+      "description": "Work in a git repository that declares piles: subtrees with a .pile/ directory whose intent.md says why each is one thing. Read a repository pile by pile, scope and commit a change, refine a layout, and write .pile/ declarations.",
+      "author": {
+        "name": "Multipile",
+        "url": "https://github.com/multipile"
+      },
+      "repository": "https://github.com/multipile/multipile-agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "git",
+        "piles",
+        "multipile",
+        "repository",
+        "intent"
+      ],
+      "category": "Productivity",
+      "tags": [
+        "git",
+        "piles",
+        "multipile"
+      ]
+    }
+  ]
+}
