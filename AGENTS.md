@@ -1,5 +1,11 @@
 # AGENTS.md
 
+## Piles
+
+This repository declares piles: subtrees that each have a `.pile/` directory whose `intent.md` says why they are one thing. Read a pile's intent before you change the pile, and keep it true in the same commit. The `multipile` skill in this repository says how: start with its `SKILL.md`, and check with its `piles.sh check` before a commit.
+
+## Working in this repository
+
 This repository is the multipile plugin marketplace. It publishes the same plugins to Claude Code and Codex. Right now it holds one plugin, `gitrepo`, which carries the `multipile` skill: how an agent works in a git repository that declares piles.
 
 [README.md](README.md) explains the layout and the commands. [CONTRIBUTING.md](CONTRIBUTING.md) has the rules every plugin is held to. Read both before you change anything.
