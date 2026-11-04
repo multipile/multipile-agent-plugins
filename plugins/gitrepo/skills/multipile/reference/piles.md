@@ -33,10 +33,12 @@ name = lib
 ```
 
 A config is one `key = value` a line, and `#` starts a comment. It holds
-these four keys, and no other:
+these four keys, and no other. `kind`, `version` and `id` are required,
+and `name` is optional:
 
 - `kind` says which format the pile is written in: `gitpile`, or
-  `auxiliary-gitpile` for an aux pile ([aux](aux.md)). `version` is `1`.
+  `auxiliary-gitpile` for an aux pile ([aux](aux.md)). `version` is `1`,
+  and is reserved for later versions of the format.
 - `id` is 32 lowercase hex characters, minted once when the pile is
   declared, and never changed. It says a pile is the same pile after a
   move. Nobody types it. Mint one with `<skill>/piles.sh id`, or with
@@ -47,8 +49,11 @@ these four keys, and no other:
   ([declarations](declarations.md)).
   No two piles share a name, and no two share an id.
 
-A pile without a name can only be referred to by its path, and no link
-can name it. So give every pile a name. Renaming a pile breaks every
+A name is optional, but a pile without one draws a warning
+([checks](checks.md)). It can only be referred to by its path, and no
+link can name it. A link is a line in a `.toml` file that says what one
+pile is to another, and it names each pile it ties
+([links](links.md)). So give every pile a name. Renaming a pile breaks every
 reference to the old name, and each one has to be rewritten.
 
 A config is committed like any other file. Git is what carries a pile to
@@ -59,10 +64,11 @@ a clone, so a pile nobody committed is a pile only in your working copy.
 Piles nest. A path is in the nearest pile at or above it, and in no other.
 
 - Every repository has a pile at its top, beside `.git`. So every path is
-  in a pile. A path in no pile means the top pile is missing: say so.
+  in a pile. A path in no pile means the top pile is missing.
 - A pile's parent is the nearest pile above it. Its children are the piles
   whose parent it is, and it holds them.
-- A pile's own files are its directory, less every pile it holds.
+- A pile's own files are every file under its directory, except the
+  files in the piles it holds, at any depth.
 - Declaring a pile inside another moves no file. The paths under the new
   pile are in it from then on, and no longer in its parent.
 
