@@ -26,8 +26,8 @@ Read this pile to find out <X>. Change it when <Y>.
   address or a list. It runs to the first blank line, or to a line that
   opens a block of its own: a heading, a rule, a bullet, a quote or a
   numbered item. Text inside `<!-- -->` is not prose.
-- **What belongs** is the paragraphs between, if the headline needs them.
-  Say what sort of thing does not belong ("anything that knows git"), and
+- **What belongs** is optional: the paragraphs between, written only if
+  the headline needs them. Say what sort of thing does not belong ("anything that knows git"), and
   not which pile holds it. Name here, in a few words, each part that other
   piles rely on, so that a link's title may name it: "the parser that
   turns scripts into trees". It never goes in the headline.

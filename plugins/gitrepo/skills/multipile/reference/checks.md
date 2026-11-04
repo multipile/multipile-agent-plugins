@@ -10,7 +10,8 @@ the whole repository, not only the piles you changed: a broken pile you did
 not touch is one to raise with whoever owns it, and not to commit past.
 
 `<skill>/piles.sh check` checks the rules below for the config and the
-intent, except those marked *by reading*. Of the `.toml` rules it checks
+intent, except those marked *by reading*. The script cannot check those:
+check them yourself, by reading the files they name. Of the `.toml` rules it checks
 two: each file's `version`, and that each `"@name"` in a `source` or
 `target` line names a pile. It exits 1 when it finds a problem
 ([reading](reading.md)). Check every other rule by reading.
