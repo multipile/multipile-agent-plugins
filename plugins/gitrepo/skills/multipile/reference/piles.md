@@ -59,6 +59,18 @@ reference to the old name, and each one has to be rewritten.
 A config is committed like any other file. Git is what carries a pile to
 a clone, so a pile nobody committed is a pile only in your working copy.
 
+## The name test
+
+Piles are the parts a repository is talked about in, so the words people
+already use point at them. If people say "the X", and X picks out one
+subtree and nothing else, X is that subtree's name, and the subtree is
+likely a pile ([boundaries](boundaries.md)).
+
+Choose a name that can be said aloud, such as `billing` or `design`. A
+pile inside another may take its parent's word as a prefix, such as
+`design-malleability` inside `design`, when the bare word would be
+ambiguous.
+
 ## A path is in the nearest pile at or above it
 
 Piles nest. A path is in the nearest pile at or above it, and in no other.

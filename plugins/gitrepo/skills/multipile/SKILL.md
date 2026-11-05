@@ -62,8 +62,9 @@ Each rule is said whole on the page it links.
   arrives with, and an event that changes the pile. A path, a file name or
   a count goes stale, so it stays out. [intent](reference/intent.md)
 - **One sentence decides a boundary.** Build files, kinds of thing (code,
-  data, a schema, documents), history, and what other piles read show
-  where to look. Size and layout do not. A headline that needs "and"
+  data, a schema, documents), a name people call a subject by, history,
+  and what other piles read show where to look. A subdirectory somebody
+  arrives at with a question of its own is a pile. Size and layout do not. A headline that needs "and"
   twice is two piles, or a boundary in the wrong place. The test only
   splits: a sentence that covers two kinds is a reason to look closer.
   [boundaries](reference/boundaries.md)
