@@ -50,7 +50,10 @@ directories the history changes together and apart. Look also for
 directories that differ in kind: code, data, the schema for that data, and
 documents each have a lifecycle of their own, with no build file at all.
 A directory of test cases, the schema they follow, and the tool that
-checks them are three candidates. Go down from the top. Skip each
+checks them are three candidates. Look also for a subject people call by
+a name of its own, such as "the billing rules": documents proposed,
+decided and superseded together are a candidate, even beside other
+documents. Go down from the top. Skip each
 directory that only groups others, and keep a candidate pile at each leaf.
 Small and many is better than large and few. Hold each candidate to the
 one-sentence test, which only splits

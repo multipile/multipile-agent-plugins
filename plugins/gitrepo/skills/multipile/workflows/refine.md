@@ -51,8 +51,8 @@ git grep -n -F '<dir>/' -- ':!<dir>'
 ```
 
 Look for what [boundaries](../reference/boundaries.md) counts as evidence:
-build files, what other piles read, and what the history changes together
-and apart. With no history to read, say so.
+build files, kinds of thing, names people call a subject by, what other
+piles read, and what the history changes together and apart. With no history to read, say so.
 
 ### 3. Test the layout
 
