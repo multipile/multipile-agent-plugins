@@ -104,11 +104,11 @@ The person picks the id and name that survive. Find the references to the
 other pile. When the two are siblings, first `git mv` the other's files
 into the survivor, as a move of files. Move every `[[nodes]]` and
 `[[edges]]` table in the other's `.pile/` into the survivor's. Here an end
-left out should come to mean the survivor, so it stays left out. Merge its `[pile]` values into the
-survivor's, with each key written once. Then unmake the other pile, and
-point every reference to it at the survivor. Remove any link from the
-survivor to itself, and any edge now written twice ([links](links.md)).
-Rewrite the survivor's intent.
+left out should come to mean the survivor, so it stays left out. Merge its
+`[pile]` values into the survivor's, with each key written once. Then
+unmake the other pile, and point every reference to it at the survivor.
+Remove any link from the survivor to itself, and any edge now written
+twice ([links](links.md)). Rewrite the survivor's intent.
 
 ## Rename a pile
 

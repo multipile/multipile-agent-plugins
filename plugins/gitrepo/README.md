@@ -15,13 +15,7 @@ Both assume the Multipile marketplace is already added; see the repository READM
 gitrepo/
 ├── plugin.json                  portable manifest (edit this one)
 ├── .claude-plugin/plugin.json   generated from plugin.json
-└── skills/multipile/
-    ├── SKILL.md                 the map; points at every other page
-    ├── piles.sh                 list, which, show, files, log, status, check, id
-    ├── reference/               what a pile, an intent, a boundary, a declaration is,
-    │                            and how a boundary is changed
-    └── workflows/               adopt, start, read and commit a change, write an intent,
-                                 refine, review a pull request
+└── skills/multipile/          the skill; its SKILL.md is the map of the rest
 ```
 
 To ship a change, bump `version` in `plugin.json`, run `npm run build` from the repository root, and commit the generated files with it.

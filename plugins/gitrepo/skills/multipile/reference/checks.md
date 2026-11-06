@@ -13,7 +13,7 @@ not touch is one to raise with whoever owns it, and not to commit past.
 intent, except those marked *by reading*. The script cannot check those:
 check them yourself, by reading the files they name. Of the `.toml` rules it checks
 two: each file's `version`, and that each `"@name"` in a `source` or
-`target` line names a pile. It exits 1 when it finds a problem
+`target` line is in double quotes and names a pile. It exits 1 when it finds a problem
 ([reading](reading.md)). Check every other rule by reading.
 
 Each rule has a severity:
@@ -25,8 +25,9 @@ Each rule has a severity:
 
 ## Problems: the config
 
-- Every `.pile/config` reads: one `key = value` a line, `#` comments, and
-  only `kind`, `version`, `id` and `name`. Each is given once.
+- Every `.pile/config` reads: one `key = value` a line, comment lines
+  starting with `#`, and only `kind`, `version`, `id` and `name`. Each is
+  given once.
 - `kind` is `gitpile` or `auxiliary-gitpile`, and `version` is `1`.
 - `id` is 32 lowercase hex characters, and no two piles have one id. Two with one id
   are a copied subtree: mint a new id in the copy.
@@ -34,8 +35,8 @@ Each rule has a severity:
   piles have one name. A name two piles claim names
   neither.
 - `config` and `intent.md` are files, not symbolic links.
-- A `.pile` is a directory. A `.pile/config` inside another `.pile/`
-  declares nothing: move it. *By reading.*
+- A `.pile/config` inside another `.pile/` declares nothing: move it.
+- A `.pile` is a directory. *By reading.*
 
 ## Problems: the intent
 

@@ -28,7 +28,8 @@ A path is given from the top too, with or without `:/`.
 ## Start wide, then narrow
 
 List the piles first. It is the cheapest way to see what the repository
-declares: every `.pile/config` that git tracks or would track.
+declares: every `.pile/config` that git tracks or would track, except one
+inside another `.pile/`, which declares nothing.
 
 ```sh
 git ls-files -co --exclude-standard -- ':(top,glob)**/.pile/config'

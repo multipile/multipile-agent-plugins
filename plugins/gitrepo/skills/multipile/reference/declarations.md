@@ -27,8 +27,8 @@ version = "gitpile/1"
 ```
 
 The first key of every declaration file is `version`, before any table. It
-names the format the file is written in, and the JSON schema that format
-is read against. `gitpile/1` is the only version so far. A file with no
+names the format the file is written in. `gitpile/1` is the only version
+so far. A file with no
 `version`, or with a version other than `gitpile/1`, is not read. It is
 not the config's `version`, which says the format of the config
 ([piles](piles.md)).
