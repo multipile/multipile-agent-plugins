@@ -19,7 +19,7 @@ pile's links before you change the pile.
 version = "gitpile/1"
 
 [[edges]]
-type = "uses"
+type = "relies-on"
 target = "@ledger"
 title = "records every charge in"
 description = """
@@ -28,7 +28,7 @@ to the database itself.
 """
 
 [[edges]]
-type = "uses"
+type = "relies-on"
 target = "external:postgres"
 title = "keeps its invoices in"
 
@@ -47,9 +47,9 @@ title = "starts each monthly run"
   `@ledger`, and the last the edge from `external:cron` to `@billing`.
   It is the only thing a link takes from where it is written: before a
   link moves to another pile, write that end out.
-- Each end is of a node type its edge type allows. The `uses` type in
+- Each end is of a node type its edge type allows. The `relies-on` type in
   [types](types.md) allows only a pile as its source, so `external:cron`
-  is never the source of a `uses` link.
+  is never the source of a `relies-on` link.
 
 `runs`, `replicates-to` and `exercises`, on this page, stand for edge
 types an aux pile of the repository has created.

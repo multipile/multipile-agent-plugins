@@ -10,17 +10,18 @@
 
 ## Rules the build enforces
 
-`npm run lint` (and every build) checks each plugin with `scripts/validate-plugin.mjs` against these rules:
+`npm run lint` checks each plugin with `scripts/validate-plugin.mjs`. `npm run build` runs the same checks, and adds the two marked *build only*, which need `marketplace.config.json`. Together they enforce these rules:
 
 - `plugin.json` is a closed schema: only `$schema`, `name`, `version`, `description`, `author`, `homepage`, `repository`, `license`, `keywords`, `extensions`. Anything else is an error. Client-specific data goes under `extensions.<reverse-domain>`.
-- `name` is 1 to 64 characters of lowercase letters, digits, `-` and `.`, alphanumeric at both ends, with no `--` or `..`, and equal to the directory name. Both hosts key installs on it.
+- `$schema` is required, and is `https://agent-plugins.org/schemas/1.0.0/plugin.schema.json`.
+- `name` is 1 to 64 characters of lowercase letters, digits, `-` and `.`, alphanumeric at both ends, with no `--` or `..`. It equals the directory name (*build only*). Both hosts key installs on it.
 - `version` and `description` are required: hosts use `version` for update checks, and `description` is what the catalog shows.
 - `author`, when present, has only `name`, `email`, `url`, and Claude Code requires `name`.
 - Nothing in the package may resolve outside the plugin root, including through symlinks.
 - Every `skills/<name>/SKILL.md` has frontmatter whose `name` equals the directory, is lowercase with single hyphens, and whose `description` is 1 to 1024 characters. A `SKILL.md` deeper than one level is never discovered and is reported.
 - `mcp.json`, when present, matches the 1.0.0 MCP schema: every server has a `type` of `stdio`, `streamable-http` or `sse` and only the fields that type allows. A stdio `command` is one executable token, either a bare name or a `./` path inside the plugin, never a shell string; `env` has no reserved `PLUGIN_ROOT` or `PLUGIN_DATA`; `cwd` is rooted at `./`, `${PLUGIN_ROOT}` or `${PLUGIN_DATA}`. A remote `url` is absolute HTTPS, or HTTP only on localhost, with no user info or fragment.
 - Every plugin ships at least one component: `skills/`, `mcp.json`, `.mcp.json`, `hooks/`, `commands/`, or `agents/`.
-- Every catalog entry has a `category` and a Codex install `policy`. The defaults in `marketplace.config.json` cover most plugins.
+- Every catalog entry has a `category` and a Codex install `policy` (*build only*). The defaults in `marketplace.config.json` cover most plugins.
 
 The build cannot check what a value means, so one rule is yours to keep: MCP `headers` never carry secrets.
 

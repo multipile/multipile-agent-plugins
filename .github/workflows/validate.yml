@@ -14,8 +14,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      # Pinned, so a release of either CLI cannot break CI with no change
+      # here. Move both forward on purpose, and run the validation with them.
       - name: Install Claude Code and Codex CLIs
-        run: npm install -g @anthropic-ai/claude-code @openai/codex
+        run: npm install -g @anthropic-ai/claude-code@2.1.318 @openai/codex@0.167.0
       - name: Validate marketplace
         run: npm run validate
         env:
