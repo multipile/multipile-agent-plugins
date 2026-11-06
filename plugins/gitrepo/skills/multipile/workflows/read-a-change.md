@@ -2,7 +2,7 @@
 
 Workflow: read what a change touched, pile by pile, against each intent.
 Needs: [reading](../reference/reading.md), [intent](../reference/intent.md).
-See next: [commit-a-change](commit-a-change.md),
+See next: [commit-a-change](commit-a-change.md), [review](review.md),
 [links](../reference/links.md), [checks](../reference/checks.md).
 
 ## When to use

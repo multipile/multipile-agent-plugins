@@ -21,6 +21,7 @@ This repository is the multipile plugin marketplace. It publishes the same plugi
 
 The skill lives in `plugins/gitrepo/skills/multipile/`. `SKILL.md` is the entry point, `reference/` has one page per concept, `workflows/` has step-by-step tasks, and `piles.sh` is a small checker and helper.
 
-- The skill stands on its own. It needs no `pile` binary and names no `pile` command, and `piles.sh` does what the skill needs.
+- The skill stands on its own, for an agent with no `pile` command line. Only `SKILL.md` names `pile`: when it is installed, it sends the agent to `pile guide`, which carries the same workflows. No other page names a `pile` command, so nothing here has to follow the cli's commands, and `piles.sh` does what every workflow needs.
+- A workflow both carry, such as `review`, says the same thing in both, in the same words where the commands allow.
 - The `reference/` pages describe the same `.pile/` format the `pile` binary reads: configs, intents, declarations, links, types and the rules piles are held to. When that format changes, the pages and `piles.sh` change with it, so the skill and the binary never disagree.
 - Keep `SKILL.md` frontmatter valid: `name` equals the directory name, and `description` is 1 to 1024 characters. `npm run lint` checks this.

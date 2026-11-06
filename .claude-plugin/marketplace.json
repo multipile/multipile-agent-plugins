@@ -10,7 +10,7 @@
       "name": "gitrepo",
       "source": "./plugins/gitrepo",
       "displayName": "Git Repo Piles",
-      "description": "Work in a git repository that declares piles: subtrees with a .pile/ directory whose intent.md says why each is one thing. Read a repository pile by pile, scope and commit a change, refine a layout, and write .pile/ declarations.",
+      "description": "Work in a git repository that declares piles: subtrees with a .pile/ directory whose intent.md says why each is one thing. Read a repository pile by pile, review a pull request by pile, scope and commit a change, refine a layout, and write .pile/ declarations.",
       "author": {
         "name": "Multipile",
         "url": "https://github.com/multipile"

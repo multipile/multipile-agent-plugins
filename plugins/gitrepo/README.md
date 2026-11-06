@@ -1,6 +1,6 @@
 # gitrepo
 
-Teaches the agent how to work in a git repository that declares piles: subtrees with a `.pile/` directory whose `intent.md` says why each is one thing. One skill, `multipile`, carries the reference pages, the workflows, and `piles.sh`, a read-only helper that needs only `sh` and `git`.
+Teaches the agent how to work in a git repository that declares piles: subtrees with a `.pile/` directory whose `intent.md` says why each is one thing. One skill, `multipile`, carries the reference pages, the workflows, and `piles.sh`, a read-only helper that needs only `sh` and `git`. Where the [`pile`](https://github.com/multipile/pile-cli) command line is installed, the skill sends the agent to its own guide, `pile guide`, instead.
 
 | Host | Install | Invoke |
 | :- | :- | :- |
@@ -21,7 +21,7 @@ gitrepo/
     ├── reference/               what a pile, an intent, a boundary, a declaration is,
     │                            and how a boundary is changed
     └── workflows/               adopt, start, read and commit a change, write an intent,
-                                 refine
+                                 refine, review a pull request
 ```
 
 To ship a change, bump `version` in `plugin.json`, run `npm run build` from the repository root, and commit the generated files with it.
