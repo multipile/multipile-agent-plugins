@@ -1,6 +1,6 @@
 ---
 name: multipile
-description: How to work in a git repository that declares piles, subtrees with a `.pile/` directory whose `intent.md` says why each is one thing. Says what a pile is, how to read a repository pile by pile, how to scope, read and commit a change, where a boundary goes, how to write an intent and keep it true, and how to write the `.toml` declarations, links, types and aux piles in a `.pile/`. Use it whenever a repository holds a `.pile/` directory, or the user, an AGENTS.md or a task names piles, an intent, a `.pile/` file or multipile, and before you lay a project out in piles or refine the piles it declares.
+description: How to work in a git repository that declares piles, subtrees with a `.pile/` directory whose `intent.md` says why each is one thing. Says what a pile is, how to read a repository pile by pile, how to scope, read and commit a change, how to review a pull request pile by pile, where a boundary goes, how to write an intent and keep it true, and how to write the `.toml` declarations, links, types and aux piles in a `.pile/`. Use it whenever a repository holds a `.pile/` directory, or the user, an AGENTS.md or a task names piles, an intent, a `.pile/` file or multipile, and before you lay a project out in piles or refine the piles it declares.
 ---
 
 # Working in a repository of piles
@@ -27,6 +27,22 @@ only points to it.
   is the directory this file is in. Where nothing can be run, every page
   still says how to get the same answer by reading the files.
 
+## When `pile` is installed
+
+`pile`, the multipile command line, carries its own guide: these
+workflows, with commands that check more, and answers an agent reads as
+JSON. It is the better way to work, when it is there. Look for it first:
+
+```sh
+command -v pile
+```
+
+When it answers, run `pile guide` and follow what it prints, instead of
+the pages here. When it is not installed, use the pages here, with
+`piles.sh`. Do not install it unasked: say it would help, with
+`brew install multipile/tap/pile` or
+https://github.com/multipile/pile-cli, and go on.
+
 ## Start here
 
 Read these two whole, before anything else:
@@ -43,6 +59,7 @@ Read these two whole, before anything else:
 | write in a repository that declares piles | [start-a-change](workflows/start-a-change.md) |
 | commit, in such a repository | [commit-a-change](workflows/commit-a-change.md) |
 | review or hand on somebody's change | [read-a-change](workflows/read-a-change.md) |
+| review a pull request, or a branch before it is one, by pile | [review](workflows/review.md) |
 | write an intent, or fix one that is untrue | [write-an-intent](workflows/write-an-intent.md) |
 | lay a project with no piles out in piles | [adopt](workflows/adopt.md) |
 | improve the piles a repository already declares | [refine](workflows/refine.md) |

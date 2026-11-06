@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "gitrepo",
-  "version": "0.1.2",
-  "description": "Work in a git repository that declares piles: subtrees with a .pile/ directory whose intent.md says why each is one thing. Read a repository pile by pile, scope and commit a change, refine a layout, and write .pile/ declarations.",
+  "version": "0.2.0",
+  "description": "Work in a git repository that declares piles: subtrees with a .pile/ directory whose intent.md says why each is one thing. Read a repository pile by pile, review a pull request by pile, scope and commit a change, refine a layout, and write .pile/ declarations.",
   "author": {
     "name": "Multipile",
     "url": "https://github.com/multipile"

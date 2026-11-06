@@ -1,4 +1,4 @@
-Teaches an agent how to work in a git repository that declares piles, with nothing but sh and git.
+Teaches an agent how to work in a git repository that declares piles, with nothing but sh and git, and sends an agent that has the `pile` command line to its own guide.
 
 What a pile is, how its declarations are written, read and checked, and the workflows an agent follows for each kind of task belong here, with a read-only checker of the same rules. How the skill is packaged, versioned or installed does not belong here.
 
