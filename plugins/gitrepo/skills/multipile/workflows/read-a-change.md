@@ -46,8 +46,9 @@ piles is one to read part by part.
 ```
 
 Look for the sentence each part of the change is held to: one that admits
-it, or one it breaks. A pile whose intent the change made untrue needs it
-rewritten in the same change.
+it, one that refuses it, or one it makes untrue. A pile whose intent the
+change made untrue needs it rewritten in the same change.
+[quality](../reference/quality.md) names each of these.
 
 Look for each link whose title the change touches, and read the pile at
 its other end too. A changed `.toml` file in a `.pile/` may add, change or
