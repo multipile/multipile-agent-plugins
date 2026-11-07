@@ -1,16 +1,17 @@
 # Review a pull request
 
 Workflow: review a pull request by pile, against its task and each intent.
-Needs: [reading](../reference/reading.md), [intent](../reference/intent.md).
+Needs: [reading](../reference/reading.md), [quality](../reference/quality.md).
 See next: [read-a-change](read-a-change.md), [links](../reference/links.md),
-[boundaries](../reference/boundaries.md).
+[boundaries](../reference/boundaries.md), [intent](../reference/intent.md).
 
 ## When to use
 
 A branch is to be merged into another, through a pull request or not yet,
 and you are to review it. A list of paths says which files changed. This
-review says which piles changed, what each is for, and whether each
-belongs to the task the branch was made for. It fixes nothing.
+review says, for each pile the branch changed, whether the task needed it
+and whether its intent admits it, and reports only what the author has to
+act on. It fixes nothing.
 
 ## What to have first
 
@@ -40,39 +41,48 @@ git diff --name-status -M origin/<base>...HEAD
 ```
 
 Look for the pile each path is in, and list the paths under it, each with
-its letter. Three dots compare from where HEAD left the base, so what
-reached the base since is not part of the change. A path that moved from
-one pile to another is in both: give `which` both of its paths. A path in
-no pile is named as such.
+its letter. A pile whose `.pile/intent.md` changed had its intent
+rewritten, and one whose `.pile/*.toml` changed had its links rewritten.
+Three dots compare from where HEAD left the base. A path that moved
+between piles is in both: give `which` both of its paths. A path in no
+pile is named as such.
 
-### 3. Hold each pile to the task and to its intent
+### 3. Read each changed pile, and answer for it
 
 ```sh
 <skill>/piles.sh show <pile>
-```
-
-Look for the sentence of the intent each part of the change is held to,
-and quote it. Then give each changed pile one verdict:
-
-- **In the task**: the task needs this pile to change.
-- **Not in the task**: nothing in the task needs it. It is a question for
-  the author, not a verdict that the change is wrong.
-- **Intent untrue**: the change made a sentence untrue, and did not
-  rewrite it.
-
-Read the pile at the other end of each link whose title the change
-touches ([links](../reference/links.md)).
-
-### 4. Read the lines
-
-```sh
 git diff origin/<base>...HEAD -- <path>
 ```
 
-Look for what each change does, a pile at a time, now that you know what
-the pile is for and whether the task asked for it.
+Look for the sentence of the intent each part of the change is held to,
+and quote it. Then give the pile its two answers. Read the lines a pile at
+a time, now that you know what the pile is for.
 
-### 5. Check every pile
+### 4. Compare what the branch rewrote
+
+```sh
+git show origin/<base>:<pile path>/.pile/intent.md
+git diff origin/<base>...HEAD -- '<pile path>/.pile/*.toml'
+```
+
+For a pile whose intent was rewritten, look for whether the new intent is
+worse than this one ([quality](../reference/quality.md)). For one whose
+links were rewritten, look for each link the branch added, removed or
+retitled.
+
+### 5. Hold the links
+
+```sh
+cat <pile path>/.pile/*.toml
+git grep -n -F -e '"@<name>"' -- ':(top,glob)**/.pile/*.toml'
+```
+
+Look for each link to or from a changed pile, and hold it to what the
+change did. Each link names its type: the aux pile that creates it holds
+an `[[edge-types]]` table with its `do` and `dont`. Where the change makes
+one pile use another, look for a link that says so.
+
+### 6. Check every pile
 
 ```sh
 <skill>/piles.sh check
@@ -82,17 +92,14 @@ Look for its exit code, and for problems in the piles the change touched.
 
 ## Done when
 
-- Every changed pile was read whole, and has one verdict.
+- Every changed pile was read whole, and has its two answers.
 - Each part of the change is held to a quoted sentence of its intent.
-- Every path in no pile, and every path that crossed a boundary, is named.
+- Every rewritten intent was compared with its base, and every link to or
+  from a changed pile was held to its type.
 
 ## What to hand back
 
-A table of the changed piles: each pile's name, its path, the headline of
-its intent, and how many paths it changed, then each pile's paths under
-it. Then a line per changed pile: its verdict, and the sentence of its
-intent the change is held to, quoted, with the piles not in the task and
-the intents made untrue first. Then each link the change touched, the
-paths in no pile, the paths that crossed a boundary, and what the check
-reported. Change nothing, and post the review only where you were asked
-to.
+Findings, and nothing else, in the shape [quality](../reference/quality.md)
+shows. A pile with no finding is not listed. Leave out a table of the
+changed piles, posted on its own where CI makes one, and the check unless
+it found something. Change nothing, and post only where you were asked to.

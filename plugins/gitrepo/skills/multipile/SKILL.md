@@ -124,6 +124,8 @@ Each rule is said whole on the page it links.
   renaming, moving and unmaking a pile, and moving files between piles
 - [checks](reference/checks.md): what must hold of every pile before a
   commit, and how bad each break is
+- [quality](reference/quality.md): the words a review judges a change by,
+  the two levels of a finding, and the shape a review hands back
 - [declarations](reference/declarations.md): the `.toml` files in a
   `.pile/`, and what each `[[nodes]]`, `[[edges]]`, `[pile]` and type
   table declares
