@@ -211,14 +211,38 @@ Look for no title or description that names a file or a path.
 ### 10. Tell the next session about the piles
 
 ```sh
-$EDITOR AGENTS.md
+$EDITOR <rules file>
 ```
 
-At the top of AGENTS.md, or of the file the project's harness reads, add
-a `## Piles` section, if the person agrees. Say that the repository
-declares piles, each a subtree with a `.pile/` directory whose
-`intent.md` says why it is one thing, and that a pile's intent is read
-before the pile is changed and kept true in the same commit.
+Write a `## Piles` section into each of the project's rules files. A
+rules file is a file the project's agents read at the start of every
+session, and which one depends on the agent:
+
+- `AGENTS.md`, which most agents read, Codex among them;
+- `CLAUDE.md` for Claude Code, and `GEMINI.md` for Gemini CLI;
+- `.github/copilot-instructions.md` for GitHub Copilot;
+- a rule in `.cursor/rules/` for Cursor, with `alwaysApply: true`.
+
+The project's rules files are each of these it already keeps, and the
+one the agent you are reads. A file that only points to another, such as
+a `CLAUDE.md` that holds `@AGENTS.md`, is not one: the file it points to
+is. Put the section near the start of each, where an agent reads it
+before much else: at the top if the person agrees, and always in the
+first 100 lines. If a rules file has a `## Piles` section already, leave
+it. Write this section. Its heading is undated on purpose: the multipile
+command line, once installed, replaces an undated section with its own,
+whose heading carries the date its text last changed.
+
+```markdown
+## Piles
+
+This repository uses piles to organize itself, with their metadata in
+`.pile/` directories. Each pile's `.pile/intent.md` says why it is one
+thing.
+- Read a pile's intent before you change the pile, and keep it true in
+  the same commit.
+- Learn more at https://multipile.dev.
+```
 
 ### 11. Check, and make one commit
 
@@ -229,8 +253,8 @@ before the pile is changed and kept true in the same commit.
 
 Look for every pile the person agreed to, and for check to exit 0
 ([checks](../reference/checks.md)). Check also finds a link that names no
-pile. Status should show only the `.pile/` directories and the harness
-file as changed. Commit them with git, in one commit, as the repository's
+pile. Status should show only the `.pile/` directories and the rules
+files as changed. Commit them with git, in one commit, as the repository's
 rules say.
 
 ## Done when
@@ -244,8 +268,8 @@ rules say.
 - No existing file was changed, except by a move the person accepted, in
   a commit of its own.
 - No pile breaks a rule of [checks](../reference/checks.md) as a problem.
-- The harness file says that the repository declares piles.
-- One commit holds every `.pile/` directory and the harness file, after
+- Each rules file holds the `## Piles` section in its first 100 lines.
+- One commit holds every `.pile/` directory and the rules files, after
   the commits of the moves.
 
 ## What to hand back
