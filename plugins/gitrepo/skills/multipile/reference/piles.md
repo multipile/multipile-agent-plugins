@@ -19,9 +19,10 @@ A pile's `.pile/` directory holds two files:
   ([intent](intent.md)).
 
 A pile may add `.toml` files, which declare nodes, types, links and the
-pile's own values ([declarations](declarations.md)). Any other file in a
-`.pile/`, such as `notes.md`, is an unread file. It declares nothing, and
-it is allowed.
+pile's own values ([declarations](declarations.md)), and diagrams, each a
+`<name>.diagram` file in `.pile/diagrams/` ([diagrams](diagrams.md)). Any
+other file in a `.pile/`, such as `notes.md`, is an unread file. It
+declares nothing, and it is allowed.
 
 ## The config says which pile it is
 
