@@ -252,6 +252,14 @@ case $cmd in
       for f in "$p"/.pile/* "$p"/.pile/.[!.]*; do
         [ -e "$f" ] || continue
         case ${f##*/} in config | intent.md | *.toml) ;;
+          # A pile's diagrams are read, and what else is there is not.
+          diagrams) if [ -d "$f" ]; then
+              for d in "$f"/* "$f"/.[!.]*; do
+                [ -e "$d" ] || continue
+                case ${d##*/} in *.diagram) ;;
+                  *) say note "$at" "unread file: diagrams/${d##*/}" ;; esac
+              done
+            else say note "$at" "unread file: diagrams"; fi ;;
           *) say note "$at" "unread file: ${f##*/}" ;; esac
       done
     done <"$list"

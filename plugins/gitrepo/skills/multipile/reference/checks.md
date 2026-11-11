@@ -64,6 +64,17 @@ Each `.pile/*.toml` file is held to [declarations](declarations.md),
 - Type tables are written only in an aux pile. A type's name is a word,
   never `pile`, and an edge type has `source` and `target`.
 
+## Problems: the diagrams
+
+Each `.pile/diagrams/<name>.diagram` file is held to
+[diagrams](diagrams.md). *By reading.*
+
+- It is KDL that reads, holding one `diagram` node that names its type and
+  `version=1`, and it keeps every rule of its format and every limit of its
+  type.
+- Each pile a box names, by `@name` or by its `:/` path, is a pile. An id
+  a box gives is that pile's id.
+
 ## Warnings
 
 - A pile with no name. Give it one.
@@ -71,8 +82,8 @@ Each `.pile/*.toml` file is held to [declarations](declarations.md),
 
 ## Notes
 
-- A file in a `.pile/` that is not the config, the intent or a `.toml`
-  file. It declares nothing.
+- A file in a `.pile/` that is not the config, the intent, a `.toml` file
+  or a diagram in `.pile/diagrams/`. It declares nothing.
 - A config that is not committed. A clone would not have the pile yet.
 - A `.pile/` with no config. It is not a pile: declare it, or remove it.
 - Another repository inside a pile, which none of its piles reads.

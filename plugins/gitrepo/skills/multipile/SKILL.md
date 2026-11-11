@@ -135,3 +135,5 @@ Each rule is said whole on the page it links.
   exists
 - [aux](reference/aux.md): what an aux pile is, how to make one, and
   what it may declare
+- [diagrams](reference/diagrams.md): a pile's diagrams, where they are
+  kept, how one is written, and what it is held to
