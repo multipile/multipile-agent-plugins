@@ -2,6 +2,9 @@
 
 A single repository that publishes the same plugins to **Claude Code** and **Codex**. Each plugin is a portable Agent Plugins package. Each host reads its own catalog file, and both catalogs are generated from one source of truth so they never drift.
 
+> [!NOTE]
+> **multipile is in early development.** Commands, file formats and output can still change between releases. Try it, and [tell us what you find](https://github.com/multipile/multipile-agent-plugins/issues).
+
 ```text
 .
 ├── marketplace.config.json          source of truth: marketplace identity + plugin list
