@@ -74,10 +74,12 @@ Each rule is said whole on the page it links.
 - **Name each pile and path explicitly.** `@lib` is a pile's name, and
   `:/packages/lib` a path from the top of the repository. Never guess which
   pile a word meant. [piles](reference/piles.md)
-- **An intent is a claim, not a topic.** Its headline lets a stranger say
-  whether a new file belongs. Its closing pair names the question somebody
-  arrives with, and an event that changes the pile. A path, a file name or
-  a count goes stale, so it stays out. [intent](reference/intent.md)
+- **An intent is a claim, not a topic or a role.** Its headline says what
+  the pile owns or hides, so that a stranger can say whether a new file
+  belongs. It says at least one sort of thing that does not belong. Its
+  closing pair names the question somebody arrives with, and where a
+  change to the pile comes from. A path, a file name or a count goes
+  stale, so it stays out. [intent](reference/intent.md)
 - **One sentence decides a boundary.** Build files, kinds of thing (code,
   data, a schema, documents), a name people call a subject by, history,
   and what other piles read show where to look. A subdirectory somebody

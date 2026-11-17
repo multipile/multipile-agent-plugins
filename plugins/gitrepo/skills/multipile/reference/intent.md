@@ -13,29 +13,39 @@ nothing, and the pile is broken until somebody writes it.
 ## An intent opens with its headline and ends with its closing pair
 
 ```markdown
-One claim about what the pile is for. This paragraph is its headline.
+One claim about what the pile owns or hides. This paragraph is its headline.
 
-What belongs in it, and what does not, if the headline needs more.
+What belongs in it, and at least one sort of thing that does not.
 
 Read this pile to find out <X>. Change it when <Y>.
 ```
 
 - **The headline** is the first paragraph of prose. It is what a reader
-  sees beside the pile in every list. Make it a claim from which a
-  stranger could say whether a new file belongs here, not a topic, an
-  address or a list. It runs to the first blank line, or to a line that
+  sees beside the pile in every list. Make it a claim about what the
+  pile owns or hides, from which a stranger could say whether a new file
+  belongs here. A pile owns what is decided or kept in it and nowhere
+  else, and hides what nothing outside it has to know: "the only place
+  that knows the payment provider". A role is not such a claim: "handles
+  billing" admits anything near billing. Nor is a topic, an address or a
+  list. The headline runs to the first blank line, or to a line that
   opens a block of its own: a heading, a rule, a bullet, a quote or a
   numbered item. Text inside `<!-- -->` is not prose.
-- **What belongs** is optional: the paragraphs between, written only if
-  the headline needs them. Say what sort of thing does not belong ("anything that knows git"), and
-  not which pile holds it. Name here, in a few words, each part that other
-  piles rely on, so that a link's title may name it: "the parser that
-  turns scripts into trees". It never goes in the headline.
+- **What belongs** is the paragraphs between. Say more of what belongs
+  only if the headline needs it. Always say at least one sort of thing
+  that does not belong, and choose one a reader could expect to find
+  here. Write it so that the change alone settles it: a reader can hold
+  a diff to "anything that knows git", and cannot hold one to "anything
+  too low-level". Say what sort of thing it is, and not which pile holds
+  it: that pile's own intent says so. Name here, in a few words, each
+  part that other piles rely on, so that a link's title may name it: "the
+  parser that turns scripts into trees". It never goes in the headline.
 - **The closing pair** is the last two sentences. The first names what a
   reader opens the pile to find out: a question somebody arrives with. The
-  second names when the pile changes: an event somebody could see happen,
-  not "when needed". The words are the pile's own, and nothing follows
-  them.
+  second names where a change to the pile comes from: a decision,
+  something outside the repository, or somebody who asks, such as "when
+  the shop changes its payment provider". It is a source somebody can
+  point at today, not a guess at what will change, and not "when needed".
+  The words are the pile's own, and nothing follows them.
 
 ## An intent has no heading
 
@@ -72,6 +82,11 @@ its path, and a path written in the file goes stale when the pile moves.
 Read a pile's intent before you change the pile. When a change makes the
 intent untrue, rewrite it in the same commit. Replace the sentence that
 became untrue, and do not add one beside it.
+
+An intent can be untrue before your change. When the intent and the
+pile's files already disagree, report it, and say which of the two your
+change followed. Do not change files to match the intent without saying
+so.
 
 An intent many commits behind its pile is one to read again, asking
 whether it is still true. `piles.sh show` counts those commits
