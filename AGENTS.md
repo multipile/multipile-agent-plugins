@@ -2,11 +2,11 @@
 
 ## Piles
 
-This repository declares piles: subtrees that each have a `.pile/` directory whose `intent.md` says why they are one thing. Read a pile's intent before you change the pile, and keep it true in the same commit. The `multipile` skill in this repository says how: start with its `SKILL.md`, and check with its `piles.sh check` before a commit.
+This repository declares piles: subtrees that each have a `.pile/` directory whose `intent.md` says why they are one thing. Read a pile's intent before you change the pile, and keep it true in the same commit. `pile`, the multipile command line, says how: start with `pile guide`, and `pile doctor` must exit 0 before a commit.
 
 ## Working in this repository
 
-This repository is the multipile plugin marketplace. It publishes the same plugins to Claude Code and Codex. Right now it holds one plugin, `gitrepo`, which carries the `multipile` skill: how an agent works in a git repository that declares piles.
+This repository is the multipile plugin marketplace. It publishes the same plugins to Claude Code and Codex. Right now it holds one plugin, `gitrepo`, which carries the multipile skills: what sends an agent to `pile` in a git repository that declares piles.
 
 [README.md](README.md) explains the layout and the commands. [CONTRIBUTING.md](CONTRIBUTING.md) has the rules every plugin is held to. Read both before you change anything.
 
@@ -17,10 +17,11 @@ This repository is the multipile plugin marketplace. It publishes the same plugi
 - Never edit generated files by hand: `.claude-plugin/marketplace.json`, `.agents/plugins/marketplace.json` and `plugins/<name>/.claude-plugin/plugin.json`. CI fails when they are stale.
 - A change that users should receive bumps `version` in that plugin's `plugin.json`, followed by `npm run build`. Both hosts cache by version, so without a bump nobody gets the change.
 
-## The multipile skill
+## The multipile skills
 
-The skill is the pile `@multipile`. Read its intent, then its `SKILL.md`, which maps the rest of it.
+The skills are the pile `@multipile`. Read its intent first.
 
-- The skill stands on its own, for an agent with no `pile` command line. Only `SKILL.md` names `pile`: when it is installed, it sends the agent to `pile guide`, which carries the same workflows. No other page names a `pile` command, so nothing here has to follow the cli's commands, and the skill's own read-only script does what every workflow needs.
-- A workflow both carry, such as `review`, says the same thing in both, in the same words where the commands allow.
-- The skill describes the same `.pile/` format `pile` reads: configs, intents, declarations, links, types and the rules piles are held to. When that format changes, the skill's pages and its script change with it, so the skill and `pile` never disagree.
+- A skill holds no workflow and no reference page. `pile guide` carries them, each written for the `pile` that prints it. A skill says when it applies, which `pile guide` page to print, and which commands that page has the agent run.
+- A skill's `description` is its trigger: both hosts read it to decide when the skill loads. Write it as the moments the skill is for, in the words a user or a task would use.
+- What a skill adds around a workflow stays small: how to get to the workflow's first step, where to stop for a person, and what to do where `pile` is not installed. A step of a workflow that only a skill says belongs in `pile guide` instead, in [multipile/pile-cli](https://github.com/multipile/pile-cli).
+- Every `pile` command and every page a skill names has to exist in the released `pile`. When a page is renamed or dropped there, the skill changes with it.

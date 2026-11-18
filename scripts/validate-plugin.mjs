@@ -142,6 +142,8 @@ export function validatePluginDir(pluginDir) {
     } else {
       let found = 0;
       for (const entry of readdirSync(skillsDir)) {
+        // a dot directory, such as a pile's .pile/, is never a skill.
+        if (entry.startsWith(".")) continue;
         const skillDir = join(skillsDir, entry);
         if (!statSync(skillDir).isDirectory()) continue;
         const skillFile = join(skillDir, "SKILL.md");
