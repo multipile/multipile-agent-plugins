@@ -12,7 +12,7 @@ A single repository that publishes the same plugins to **Claude Code** and **Cod
 │   └── gitrepo/
 │       ├── plugin.json              portable Agent Plugins manifest (source of truth per plugin)
 │       ├── .claude-plugin/plugin.json   generated
-│       └── skills/multipile/        the skill, loaded by both hosts
+│       └── skills/<skill>/SKILL.md  the skills, loaded by both hosts
 ├── .claude-plugin/marketplace.json  generated, read by Claude Code
 ├── .agents/plugins/marketplace.json generated, read by Codex
 ├── schemas/agent-plugins/1.0.0/     Agent Plugins JSON Schemas, for reference
@@ -41,13 +41,15 @@ codex plugin add gitrepo@multipile
 
 Both commands also accept a local checkout path instead of the URL, which is the quickest way to test changes.
 
+The skills run [`pile`](https://github.com/multipile/pile-cli), the multipile command line, so install it too: `brew install multipile/tap/pile`.
+
 Then open any repository that has a `.pile/` directory. The `multipile` skill loads on its own, or run `/gitrepo:multipile` in Claude Code.
 
 ## Plugins
 
 | Plugin | What it does |
 | :- | :- |
-| [gitrepo](plugins/gitrepo/README.md) | How to work in a git repository that declares piles: read it pile by pile, scope and commit a change, write `.pile/` declarations. |
+| [gitrepo](plugins/gitrepo/README.md) | Skills that send the agent to `pile` at the right moment in a git repository that declares piles: before a change, before a commit, to review a pull request by pile, to write an intent, and to lay out or refine the piles. |
 
 ## Maintain the marketplace
 
