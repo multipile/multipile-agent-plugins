@@ -47,6 +47,7 @@ Carry it out from the top, before the first edit. It finds the pile each path is
 | report a boundary that looks untrue | `pile guide boundary-note` | |
 | write a link, a type, an aux pile or a diagram | `pile guide links`, `types`, `aux`, `diagrams` | |
 | find out which command reads what | `pile guide reading` | |
+| ask a question of what the repository declares, or write what a diagram should show | `pile guide query` | |
 | see every page | `pile guide --list` | |
 
 ## Carry a workflow out from what `pile` prints

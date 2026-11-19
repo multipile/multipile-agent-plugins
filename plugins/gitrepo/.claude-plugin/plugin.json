@@ -1,6 +1,6 @@
 {
   "name": "gitrepo",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Work in a git repository that declares piles: subtrees with a .pile/ directory whose intent.md says why each is one thing. Skills that send the agent to pile, the multipile command line, at the right moment: before a change, before a commit, to review a pull request by pile, to write an intent, and to lay out or refine the piles.",
   "author": {
     "name": "Multipile",
